@@ -1,5 +1,6 @@
 import './App.css';
 import { colorsByYear, years } from './gt350-data'
+import { ReactComponent as Logo } from './logo-gt350.svg'
 
 const ColorCard = ({
   hex,
@@ -15,18 +16,23 @@ function App() {
   // const formatNumber = num => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num)
   return (
     <div className="App">
+      <header>
+        <Logo width="200" />
+      </header>
 
-      {years.map(year => (
-        <div key={year}>
-          <h1>{year}</h1>
-          <div>
-            <h2>Colors</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
-              {colorsByYear[year].map(({name, hex}) => <ColorCard {...{ name, hex }} />)}
+      <main>
+        {years.map(year => (
+          <div key={year}>
+            <h1>{year}</h1>
+            <div>
+              <h2>Colors</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+                {colorsByYear[year].map(({name, hex}) => <ColorCard {...{ name, hex }} />)}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </main>
 
     </div>
   );
