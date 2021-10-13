@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/gt350/static/css/main.f4893bd0.chunk.css",
-    "main.js": "/gt350/static/js/main.8660ab0f.chunk.js",
-    "main.js.map": "/gt350/static/js/main.8660ab0f.chunk.js.map",
+    "main.css": "/gt350/static/css/main.8cbfcbee.chunk.css",
+    "main.js": "/gt350/static/js/main.48ecff0a.chunk.js",
+    "main.js.map": "/gt350/static/js/main.48ecff0a.chunk.js.map",
     "runtime-main.js": "/gt350/static/js/runtime-main.8d2fa5ae.js",
     "runtime-main.js.map": "/gt350/static/js/runtime-main.8d2fa5ae.js.map",
     "static/js/2.51a6cbc3.chunk.js": "/gt350/static/js/2.51a6cbc3.chunk.js",
@@ -10,13 +10,14 @@
     "static/js/3.06ee0ad1.chunk.js": "/gt350/static/js/3.06ee0ad1.chunk.js",
     "static/js/3.06ee0ad1.chunk.js.map": "/gt350/static/js/3.06ee0ad1.chunk.js.map",
     "index.html": "/gt350/index.html",
-    "static/css/main.f4893bd0.chunk.css.map": "/gt350/static/css/main.f4893bd0.chunk.css.map",
-    "static/js/2.51a6cbc3.chunk.js.LICENSE.txt": "/gt350/static/js/2.51a6cbc3.chunk.js.LICENSE.txt"
+    "static/css/main.8cbfcbee.chunk.css.map": "/gt350/static/css/main.8cbfcbee.chunk.css.map",
+    "static/js/2.51a6cbc3.chunk.js.LICENSE.txt": "/gt350/static/js/2.51a6cbc3.chunk.js.LICENSE.txt",
+    "static/media/logo-gt350.fe8060c5.svg": "/gt350/static/media/logo-gt350.fe8060c5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8d2fa5ae.js",
     "static/js/2.51a6cbc3.chunk.js",
-    "static/css/main.f4893bd0.chunk.css",
-    "static/js/main.8660ab0f.chunk.js"
+    "static/css/main.8cbfcbee.chunk.css",
+    "static/js/main.48ecff0a.chunk.js"
   ]
 }
