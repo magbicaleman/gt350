@@ -12,7 +12,7 @@ body {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  padding: 0 8px 0 8px;
+  padding: 0 16px;
 }
 
 .App > header svg path{
@@ -20,5 +20,5 @@ body {
 }
 
 .App > main {
-  padding: 0 8px 0 8px;
+  padding: 0 16px;
 }
