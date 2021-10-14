@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/gt350/static/css/main.517829f1.chunk.css",
+    "main.css": "/gt350/static/css/main.932ef350.chunk.css",
     "main.js": "/gt350/static/js/main.8337a459.chunk.js",
     "main.js.map": "/gt350/static/js/main.8337a459.chunk.js.map",
     "runtime-main.js": "/gt350/static/js/runtime-main.8d2fa5ae.js",
@@ -10,14 +10,14 @@
     "static/js/3.06ee0ad1.chunk.js": "/gt350/static/js/3.06ee0ad1.chunk.js",
     "static/js/3.06ee0ad1.chunk.js.map": "/gt350/static/js/3.06ee0ad1.chunk.js.map",
     "index.html": "/gt350/index.html",
-    "static/css/main.517829f1.chunk.css.map": "/gt350/static/css/main.517829f1.chunk.css.map",
+    "static/css/main.932ef350.chunk.css.map": "/gt350/static/css/main.932ef350.chunk.css.map",
     "static/js/2.204e913c.chunk.js.LICENSE.txt": "/gt350/static/js/2.204e913c.chunk.js.LICENSE.txt",
     "static/media/logo-gt350.fe8060c5.svg": "/gt350/static/media/logo-gt350.fe8060c5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8d2fa5ae.js",
     "static/js/2.204e913c.chunk.js",
-    "static/css/main.517829f1.chunk.css",
+    "static/css/main.932ef350.chunk.css",
     "static/js/main.8337a459.chunk.js"
   ]
 }
