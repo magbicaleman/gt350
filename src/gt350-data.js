@@ -24,6 +24,21 @@ const colors = [
   ['Wimbledon White', '#d2cac1', [years[4]] ],
 ]
 
+const stripes = [
+  ['Black/White', '--black', '--accent-white', years.slice(0,3)],
+  ['White/Black', '--white', '--accent-black', years.slice(0,3)],
+  ['Blue/Black', '--blue', '--accent-back', years.slice(0,3)],
+  ['Black/LT Magnetic', '--black', '--accent-lt-magnetic', years.slice(-2)],
+  ['White/LT Magnetic', '--white', '--accent-lt-magnetic', years.slice(-2)],
+  ['Kona Blue/LT Magnetic', '--kona', '--accent-lt-magnetic', years.slice(-2)],
+  ['White/Red', '--white', '--accent-red', ['*']],
+  ['Black/Red', '--black', '--accent-red', ['*']],
+  ['Blue/Red', '--blue', '--accent-red', years.slice(0,3)],
+  ['Kona Blue/Red', '--kona', '--accent-red', years.slice(-2)],
+  ['Guardsman Blue', '--guardsman-blue', '', years.slice(-1)],
+  ['No Stripe', '', '',['*']],
+]
+
 const colorsByYear = years.reduce((p, year) => ({
   ...p,
   [year]: colors
@@ -31,7 +46,20 @@ const colorsByYear = years.reduce((p, year) => ({
     .map(([name, hex]) => ({ name, hex }))
 }), {} )
 
+const grouppedByYear = years.reduce((p, year) => ({
+  ...p,
+  [year]: {
+    colors: colors
+      .filter(([, , years]) => years.includes('*') || years.includes(year))
+      .map(([name, hex]) => ({ name, hex })),
+    stripes: stripes
+      .filter(([, , , years]) => years.includes('*') || years.includes(year))
+      .map(([name, bgColor, accentColor]) => ({ name, bgColor, accentColor })),
+  }
+}), {} )
+
 export {
   colorsByYear,
   years,
+  grouppedByYear,
 }
