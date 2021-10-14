@@ -19,6 +19,70 @@ body {
   fill: white;
 }
 
-.App > main {
+
+.stripe {
+  width: 10px;
+  margin: 0 1px;
+  border-width: 0 2px;
+  border-style: solid;
+}
+
+.stripe-color {
+  background: pink;
+  border: 1px solid #717171;
+  display: flex;
+  /* flex-direction: column; */
+  height: 50px;
+  justify-content: center;
+  width: 50px; 
+}
+
+.stripe-color.--black .stripe {
+  background: black;
+}
+
+.stripe-color.--blue .stripe {
+  background: #2564a9;
+}
+
+.stripe-color.--white .stripe {
+  background: white;
+}
+
+.stripe-color.--kona .stripe {
+  background: #202d55;
+}
+
+.stripe-color.--guardsman-blue .stripe {
+  background: #3b4d5f;
+}
+
+.stripe-color.--accent-red .stripe {
+  border-color: #f50f39;
+}
+
+.stripe-color.--accent-black .stripe {
+  border-color: black;
+}
+
+.stripe-color.--accent-white .stripe {
+  border-color: white;
+}
+
+.stripe-color.--accent-lt-magnetic .stripe {
+  border-color: #758086;
+}
+
+
+
+h1.year {
+  padding: 0 16px;
+  display: inline-block;
+  border-top: rgb(70, 70, 70) 2px solid;
+  border-bottom: rgb(70, 70, 70) 2px solid;
+  border-right: rgb(70, 70, 70) 2px solid;
+}
+
+.year__data {
   padding: 0 16px;
 }
