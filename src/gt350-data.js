@@ -21,7 +21,7 @@ const colors = [
   ['Triple Yellow', '#ddb40b', [years[0], years[1], years[2]] ],
   ['Twister Orange', '#e25702', [years[4]] ],
   ['Velocity Blue', '#004ce5', [years[3], years[4]] ],
-  ['Wimbledon White', '#d2cac1', [years[4]] ],
+  ['Wimbledon White', 'rgb(254, 252, 249)', [years[4]] ],
 ]
 
 const stripes = [
@@ -36,7 +36,7 @@ const stripes = [
   ['Blue/Red', '--blue', '--accent-red', years.slice(0,3)],
   ['Kona Blue/Red', '--kona', '--accent-red', years.slice(-2)],
   ['Guardsman Blue', '--guardsman-blue', '', years.slice(-1)],
-  ['No Stripe', '', '',['*']],
+  ['No Stripe', '', '--no-stripe', ['*']],
 ]
 
 const colorsByYear = years.reduce((p, year) => ({
