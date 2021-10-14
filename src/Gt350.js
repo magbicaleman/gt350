@@ -1,5 +1,5 @@
 import './App.css';
-import { colorsByYear, years } from './gt350-data'
+import { years, grouppedByYear } from './gt350-data'
 import { ReactComponent as Logo } from './logo-gt350.svg'
 
 const ColorCard = ({
@@ -8,6 +8,20 @@ const ColorCard = ({
 }) => (
   <div>
     <div style={{ background: hex, height: '50px', width: '50px', border: '1px solid white'}}></div>
+    <div>{name}</div>
+  </div>
+)
+
+const StripeCard = ({
+  accentColor,
+  bgColor,
+  name,
+}) => (
+  <div>
+    <div className={`stripe-color ${bgColor} ${accentColor}`}>
+      <div className="stripe">&nbsp;</div>
+      <div className="stripe">&nbsp;</div>
+    </div>
     <div>{name}</div>
   </div>
 )
@@ -23,11 +37,15 @@ function App() {
       <main>
         {years.map(year => (
           <div key={year}>
-            <h1>{year}</h1>
-            <div>
+            <h1 className="year">{year}</h1>
+            <div className="year__data">
               <h2>Colors</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
-                {colorsByYear[year].map(({name, hex}) => <ColorCard {...{ name, hex }} />)}
+                {grouppedByYear[year].colors.map(item => <ColorCard {...item} />)}
+              </div>
+              <h2>Stripe Options</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+              {grouppedByYear[year].stripes.map(item => <StripeCard {...item} />)}
               </div>
             </div>
           </div>
