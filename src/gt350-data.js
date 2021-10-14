@@ -27,7 +27,7 @@ const colors = [
 const stripes = [
   ['Black/White', '--black', '--accent-white', years.slice(0,3)],
   ['White/Black', '--white', '--accent-black', years.slice(0,3)],
-  ['Blue/Black', '--blue', '--accent-back', years.slice(0,3)],
+  ['Blue/Black', '--blue', '--accent-black', years.slice(0,3)],
   ['Black/LT Magnetic', '--black', '--accent-lt-magnetic', years.slice(-2)],
   ['White/LT Magnetic', '--white', '--accent-lt-magnetic', years.slice(-2)],
   ['Kona Blue/LT Magnetic', '--kona', '--accent-lt-magnetic', years.slice(-2)],
