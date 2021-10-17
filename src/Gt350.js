@@ -2,6 +2,14 @@ import './App.css';
 import { years, grouppedByYear } from './gt350-data'
 import { ReactComponent as Logo } from './logo-gt350.svg'
 
+const PriceFormat = ({ amount, label }) => {
+  const price = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(amount);
+  return (
+    <div>{label}: {price}</div>
+  )
+}
+
+
 const ColorCard = ({
   hex,
   name
@@ -39,6 +47,9 @@ function App() {
           <div key={year}>
             <h1 className="year">{year}</h1>
             <div className="year__data">
+            <h2>Pricing</h2>
+              <div>Base prices</div>
+              {grouppedByYear[year].prices.map(([trim, price]) => <PriceFormat key={trim} amount={price} label={trim} />)} 
               <h2>Colors</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
                 {grouppedByYear[year].colors.map(item => <ColorCard {...item} />)}
