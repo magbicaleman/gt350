@@ -60,3 +60,4 @@ export default App;
 
 // sources:
 // https://mustangfanclub.com/shelby-gt350-gt350r-production-numbers/
+// https://docs.google.com/spreadsheets/d/1t12CKnAaJGNNKfOPxAApFMStWioaABhqjzwRpHdKmnE/edit#gid=876107477
