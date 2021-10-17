@@ -13,6 +13,8 @@ body {
   position: -webkit-sticky;
   top: 0;
   padding: 0 16px;
+  border-bottom: black 1px solid;
+  box-shadow: 0 1px 6px 2px rgb(21, 21, 21);
 }
 
 .App > header svg path{
@@ -88,8 +90,14 @@ h1 {margin-bottom: 0;}
 }
 
 
+.year {
+  padding-bottom: 1rem;
+}
+.year:nth-child(odd) {
+  background: rgb(29, 29, 29);
+}
 
-h1.year {
+.year__heading {
   padding: 0 16px;
   display: inline-block;
   border-top: rgb(70, 70, 70) 2px solid;

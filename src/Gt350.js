@@ -44,8 +44,8 @@ function App() {
 
       <main>
         {years.map(year => (
-          <div key={year}>
-            <h1 className="year">{year}</h1>
+          <div key={year} className="year">
+            <h1 className="year__heading">{year}</h1>
             <div className="year__data">
             <h2>Pricing</h2>
               <div>Base prices</div>
