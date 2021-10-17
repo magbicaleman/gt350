@@ -19,6 +19,8 @@ body {
   fill: white;
 }
 
+h1 {margin-bottom: 0;}
+
 
 .stripe {
   width: 10px;
