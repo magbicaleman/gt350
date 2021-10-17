@@ -1,5 +1,16 @@
 const years = [2016, 2017, 2018, 2019, 2020]
 
+const basePrices = [
+  [47795, 61295],
+  [54845, 62345],
+  [55940, 63440],
+  [59140, 67135],
+  [59140, 72135],
+].map(([GT350, GT350R]) => ({
+  GT350,
+  GT350R,
+}))
+
 const colors = [
   ['Avalanche Grey', '#cacbd3', [years[0], years[1]] ],
   ['Competition Orange', '#f6650a', [years[0]] ],
@@ -46,7 +57,7 @@ const colorsByYear = years.reduce((p, year) => ({
     .map(([name, hex]) => ({ name, hex }))
 }), {} )
 
-const grouppedByYear = years.reduce((p, year) => ({
+const grouppedByYear = years.reduce((p, year, i) => ({
   ...p,
   [year]: {
     colors: colors
@@ -55,11 +66,15 @@ const grouppedByYear = years.reduce((p, year) => ({
     stripes: stripes
       .filter(([, , , years]) => years.includes('*') || years.includes(year))
       .map(([name, bgColor, accentColor]) => ({ name, bgColor, accentColor })),
+    prices: Object.entries(basePrices[i]),
   }
 }), {} )
+
+console.log('grouppedByYear', grouppedByYear)
 
 export {
   colorsByYear,
   years,
   grouppedByYear,
+  basePrices
 }
