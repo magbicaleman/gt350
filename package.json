@@ -2,7 +2,7 @@
   "name": "gt350",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://magbicaleman.github.io/gt350",
+  "homepage": "https://www.gt350.co",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
