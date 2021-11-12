@@ -1,17 +1,32 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import './App.css';
 import { years, grouppedByYear } from './gt350-data'
 import { ReactComponent as Logo } from './logo-gt350.svg'
 
 
-const YearSelector = ({ years, setYear }) => (
+const YearSelector = ({ years, setYear, selectedYear }) => (
   <>
     <nav className="year-selector">
       <ul>
-        <li><button onClick={() => setYear('all')}>All</button></li>
+        <li>
+          <button
+            className={`${selectedYear === 'all' ? 'active' : null}`}
+            onClick={() => setYear('all')}
+          >
+            All
+          </button>
+        </li>
         {years.map(year => (
-          <li key={year}>
-            <button onClick={() => setYear(year)}>{year}</button>
+          <li
+            key={year}
+            className={`${selectedYear === year ? 'active' : null}`}
+          >
+            <button
+              className={`${selectedYear === year ? 'active' : null}`}
+              onClick={() => setYear(year)}
+            >
+              {year}
+            </button>
           </li>
         ))}
       </ul>
@@ -81,17 +96,18 @@ const DisplayByYear = ({ selectedYear }) => (
 
 
 const App = () => {
-  const [year, setYear] = useState('all')
-
-  console.log('App->year', year)
+  const [year, setYearState] = useState('all')
+  const setYear = year => {
+    setYearState(year)
+    window.scrollTo(0,0)
+  }
 
   return (
     <div className="App">
       <header>
         <Logo width="200" />
+        <YearSelector {...{ years, setYear, selectedYear: year }} />
       </header>
-
-      <YearSelector {...{ years, setYear }} />
 
       <main>
         <DisplayByYear selectedYear={year} />
