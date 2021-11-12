@@ -108,3 +108,12 @@ h1 {margin-bottom: 0;}
 .year__data {
   padding: 0 16px;
 }
+
+
+nav ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}

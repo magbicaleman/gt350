@@ -1,6 +1,23 @@
+import { useState } from 'react'
 import './App.css';
 import { years, grouppedByYear } from './gt350-data'
 import { ReactComponent as Logo } from './logo-gt350.svg'
+
+
+const YearSelector = ({ years, setYear }) => (
+  <>
+    <nav className="year-selector">
+      <ul>
+        <li><button onClick={() => setYear('all')}>All</button></li>
+        {years.map(year => (
+          <li key={year}>
+            <button onClick={() => setYear(year)}>{year}</button>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </>
+)
 
 const PriceFormat = ({ amount, label }) => {
   const price = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(amount);
@@ -8,7 +25,6 @@ const PriceFormat = ({ amount, label }) => {
     <div>{label}: {price}</div>
   )
 }
-
 
 const ColorCard = ({
   hex,
@@ -34,33 +50,51 @@ const StripeCard = ({
   </div>
 )
 
-function App() {
-  // const formatNumber = num => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num)
+const YearContent = ({ year }) => (
+  <div className="year">
+    <h1 className="year__heading">{year}</h1>
+    <div className="year__data">
+    <h2>Pricing</h2>
+      <div>Base prices</div>
+      {grouppedByYear[year].prices.map(([trim, price]) => <PriceFormat key={trim} amount={price} label={trim} />)} 
+      <h2>Colors</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+        {grouppedByYear[year].colors.map(item => <ColorCard key={item.name} {...item} />)}
+      </div>
+      <h2>Stripe Options</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+      {grouppedByYear[year].stripes.map(item => <StripeCard key={item.name} {...item} />)}
+      </div>
+    </div>
+  </div>
+) 
+
+const DisplayByYear = ({ selectedYear }) => (
+  <>
+    {console.log('selectedYear', selectedYear)}
+    {selectedYear === 'all'
+      ? years.map(year => <YearContent key={year} {...{ year }} />)
+      : <YearContent year={selectedYear} />
+    }
+  </>
+)
+
+
+const App = () => {
+  const [year, setYear] = useState('all')
+
+  console.log('App->year', year)
+
   return (
     <div className="App">
       <header>
         <Logo width="200" />
       </header>
 
+      <YearSelector {...{ years, setYear }} />
+
       <main>
-        {years.map(year => (
-          <div key={year} className="year">
-            <h1 className="year__heading">{year}</h1>
-            <div className="year__data">
-            <h2>Pricing</h2>
-              <div>Base prices</div>
-              {grouppedByYear[year].prices.map(([trim, price]) => <PriceFormat key={trim} amount={price} label={trim} />)} 
-              <h2>Colors</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
-                {grouppedByYear[year].colors.map(item => <ColorCard {...item} />)}
-              </div>
-              <h2>Stripe Options</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
-              {grouppedByYear[year].stripes.map(item => <StripeCard {...item} />)}
-              </div>
-            </div>
-          </div>
-        ))}
+        <DisplayByYear selectedYear={year} />
       </main>
 
     </div>
