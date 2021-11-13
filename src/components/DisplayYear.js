@@ -1,3 +1,4 @@
+import { years } from '../gt350-data'
 import YearContent from "./YearContent"
 
 const DisplayByYear = ({ selectedYear }) => (
