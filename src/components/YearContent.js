@@ -16,7 +16,7 @@ const YearContent = ({ year }) => (
       </div>
       <h2>Stripe Options</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
-      {grouppedByYear[year].stripes.map(item => <StripeCard key={item.name} {...item} />)}
+        {grouppedByYear[year].stripes.map(item => <StripeCard key={item.name} {...item} />)}
       </div>
     </div>
   </div>
