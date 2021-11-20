@@ -11,11 +11,11 @@ const YearContent = ({ year }) => (
       <div>Base prices</div>
       {grouppedByYear[year].prices.map(([trim, price]) => <PriceFormat key={trim} amount={price} label={trim} />)} 
       <h2>Colors</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px'}}>
         {grouppedByYear[year].colors.map(item => <ColorCard key={item.name} {...item} />)}
       </div>
       <h2>Stripe Options</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px'}}>
         {grouppedByYear[year].stripes.map(item => <StripeCard key={item.name} {...item} />)}
       </div>
     </div>
