@@ -50,13 +50,6 @@ const stripes = [
   ['No Stripe', '', '--no-stripe', ['*']],
 ]
 
-const colorsByYear = years.reduce((p, year) => ({
-  ...p,
-  [year]: colors
-    .filter(([, , years]) => years.includes('*') || years.includes(year))
-    .map(([name, hex]) => ({ name, hex }))
-}), {} )
-
 const grouppedByYear = years.reduce((p, year, i) => ({
   ...p,
   [year]: {
@@ -71,7 +64,6 @@ const grouppedByYear = years.reduce((p, year, i) => ({
 }), {} )
 
 export {
-  colorsByYear,
   years,
   grouppedByYear,
   basePrices
