@@ -70,8 +70,6 @@ const grouppedByYear = years.reduce((p, year, i) => ({
   }
 }), {} )
 
-console.log('grouppedByYear', grouppedByYear)
-
 export {
   colorsByYear,
   years,
