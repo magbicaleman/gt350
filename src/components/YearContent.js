@@ -2,6 +2,8 @@ import { grouppedByYear } from '../gt350-data'
 import ColorCard from "./ColorCard"
 import PriceFormat from "./PriceFormat"
 import StripeCard from "./StripeCard"
+import * as pillStyles from './Pill.module.css'
+import * as colorCardStyles from './ColorCard.module.css'
 
 const YearContent = ({ year }) => (
   <div className="year">
@@ -14,8 +16,11 @@ const YearContent = ({ year }) => (
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px'}}>
         {grouppedByYear[year].colors.map(item => <ColorCard key={item.name} {...item} />)}
       </div>
-      <h2>Stripe Options</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px'}}>
+      <h2 style={{marginBottom: 0}}>Stripe Options</h2>
+      <div className={colorCardStyles.price}>
+        <span className={pillStyles.normal}>msrp</span> {grouppedByYear[year].stripeMsrp}
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px', marginTop: '0.83em'}}>
         {grouppedByYear[year].stripes.map(item => <StripeCard key={item.name} {...item} />)}
       </div>
     </div>

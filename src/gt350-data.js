@@ -1,3 +1,5 @@
+const toPrice = num => new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(num)
+
 const years = [2016, 2017, 2018, 2019, 2020]
 
 const basePrices = [
@@ -50,6 +52,11 @@ const stripes = [
   ['No Stripe', '', '--no-stripe', ['*']],
 ]
 
+const stripeMsrps = [
+  [years.slice(0,4), 475],
+  [years.slice(-1), 495]
+]
+
 const grouppedByYear = years.reduce((p, year, i) => ({
   ...p,
   [year]: {
@@ -59,7 +66,11 @@ const grouppedByYear = years.reduce((p, year, i) => ({
     stripes: stripes
       .filter(([, , , years]) => years.includes('*') || years.includes(year))
       .map(([name, bgColor, accentColor]) => ({ name, bgColor, accentColor })),
+    stripeMsrp: stripeMsrps
+      .filter(([years]) => years.includes('*') || years.includes(year))
+      .map(([, msrp]) => toPrice(msrp))[0],
     prices: Object.entries(basePrices[i]),
+
   }
 }), {} )
 
