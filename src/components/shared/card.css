@@ -1,0 +1,3 @@
+.name {
+  composes: medium from './typography.css'
+}

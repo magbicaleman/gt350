@@ -1,0 +1,13 @@
+.color-swatch {
+  border: 1px solid white;
+  height: 50px;
+  width: 50px;
+}
+
+.name {
+  composes: name from './shared/card.css'
+}
+
+.price {
+  composes: small from './shared/typography.css'
+}
