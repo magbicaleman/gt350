@@ -23,14 +23,14 @@ const colors = [
   ['Lead Foot Gray', '#737982', [years[2], years[3]] ],
   ['Lightning Blue', '#0c1ab7', [years[1], years[2]] ],
   ['Magnetic', '#bfc7ca', ['*'] ], 
-  ['Orange Fury', '#ffa750', [years[2], years[3]] ],
+  ['Orange Fury', '#ffa750', [years[2], years[3]], 495],
   ['Oxford White', '#ebf2ff', ['*'] ],
   ['Race Red', '#dd0000', ['*'] ],
-  ['Rapid Red', '#a5212d', [years[4]] ],
-  ['Ruby Red', '#3f1417', [years[1], years[2], years[3]] ], 
+  ['Rapid Red', '#a5212d', [years[4]], 395],
+  ['Ruby Red', '#3f1417', [years[1], years[2], years[3]], 395 ], 
   ['Shadow Black', '#08090b', ['*'] ],
-  ['Triple Yellow', '#ddb40b', [years[0], years[1], years[2]] ],
-  ['Twister Orange', '#e25702', [years[4]] ],
+  ['Triple Yellow', '#ddb40b', [years[0], years[1], years[2]], 495 ],
+  ['Twister Orange', '#e25702', [years[4]], 495],
   ['Velocity Blue', '#004ce5', [years[3], years[4]] ],
   ['Wimbledon White', 'rgb(254, 252, 249)', [years[4]] ],
 ]
@@ -55,7 +55,7 @@ const grouppedByYear = years.reduce((p, year, i) => ({
   [year]: {
     colors: colors
       .filter(([, , years]) => years.includes('*') || years.includes(year))
-      .map(([name, hex]) => ({ name, hex })),
+      .map(([name, hex, , msrp]) => ({ name, hex, msrp })),
     stripes: stripes
       .filter(([, , , years]) => years.includes('*') || years.includes(year))
       .map(([name, bgColor, accentColor]) => ({ name, bgColor, accentColor })),
