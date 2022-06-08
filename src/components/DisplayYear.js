@@ -1,7 +1,12 @@
 import { years } from '../gt350-data'
 import YearContent from "./YearContent"
+import { useGetSharedState } from '../experimental'
 
-const DisplayByYear = ({ selectedYear }) => (
+const DisplayByYear = () => {
+  const selectedYear = useGetSharedState()
+  // console.log('DisplayByYear :: selectedYear', selectedYear)
+
+  return (
   <>
     {console.log('selectedYear', selectedYear)}
     {selectedYear === 'all'
@@ -9,6 +14,6 @@ const DisplayByYear = ({ selectedYear }) => (
       : <YearContent year={selectedYear} />
     }
   </>
-)
+)}
 
 export default DisplayByYear

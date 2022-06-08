@@ -1,31 +1,22 @@
-import { useState } from 'react'
 import './App.css';
 import { years } from './gt350-data'
 import { ReactComponent as Logo } from './logo-gt350.svg'
 import YearSelector from './components/YearSelector';
 import DisplayByYear from './components/DisplayYear';
 
-const App = () => {
-  const [year, setYearState] = useState('all')
-  const setYear = year => {
-    setYearState(year)
-    window.scrollTo(0,0)
-  }
+const App = () => (
+  <div className="App">
+    <header>
+      <Logo width="200" />
+      <YearSelector years={years} />
+    </header>
 
-  return (
-    <div className="App">
-      <header>
-        <Logo width="200" />
-        <YearSelector {...{ years, setYear, selectedYear: year }} />
-      </header>
+    <main>
+      <DisplayByYear />
+    </main>
 
-      <main>
-        <DisplayByYear selectedYear={year} />
-      </main>
-
-    </div>
-  );
-}
+  </div>
+)
 
 export default App;
 

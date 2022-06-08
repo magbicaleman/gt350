@@ -1,4 +1,10 @@
-const YearSelector = ({ years, setYear, selectedYear }) => (
+import { useSetSharedState, useGetSharedState } from '../experimental'
+
+const YearSelector = ({ years }) => { 
+  const setYear = useSetSharedState()
+  const selectedYear = useGetSharedState()
+  
+  return (
   <>
     <nav className="year-selector">
       <ul>
@@ -27,5 +33,6 @@ const YearSelector = ({ years, setYear, selectedYear }) => (
     </nav>
   </>
 )
+}
 
 export default YearSelector
