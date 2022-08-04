@@ -2,7 +2,6 @@ import selectedYearStore from '../stores'
 
 const YearSelector = ({ years }) => { 
   const [selectedYear, setSelectedYear] = selectedYearStore
-  console.log(`selectedYear`, selectedYear())
   
   return (
   <>
