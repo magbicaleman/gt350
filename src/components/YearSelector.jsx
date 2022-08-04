@@ -9,7 +9,7 @@ const YearSelector = ({ years }) => {
       <ul>
         <li>
           <button
-            className={`${selectedYear === 'all' ? 'active' : null}`}
+            className={`${selectedYear() === 'all' ? 'active' : null}`}
             onClick={() => setSelectedYear('all')}
           >
             All
@@ -18,10 +18,10 @@ const YearSelector = ({ years }) => {
         {years.map(year => (
           <li
             key={year}
-            className={`${selectedYear === year ? 'active' : null}`}
+            className={`${selectedYear() === year ? 'active' : null}`}
           >
             <button
-              className={`${selectedYear === year ? 'active' : null}`}
+              className={`${selectedYear() === year ? 'active' : null}`}
               onClick={() => setSelectedYear(year)}
             >
               {year}
