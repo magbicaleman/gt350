@@ -1,6 +1,6 @@
 import './App.css';
 import { years } from './gt350-data'
-import { ReactComponent as Logo } from './logo-gt350.svg'
+import Logo from './logo-gt350.svg'
 import YearSelector from './components/YearSelector';
 import DisplayByYear from './components/DisplayYear';
 

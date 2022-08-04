@@ -1,8 +1,8 @@
-import { useSetSharedState, useGetSharedState } from '../experimental'
+import selectedYearStore from '../stores'
 
 const YearSelector = ({ years }) => { 
-  const setYear = useSetSharedState()
-  const selectedYear = useGetSharedState()
+  const [selectedYear, setSelectedYear] = selectedYearStore
+  console.log(`selectedYear`, selectedYear())
   
   return (
   <>
@@ -11,7 +11,7 @@ const YearSelector = ({ years }) => {
         <li>
           <button
             className={`${selectedYear === 'all' ? 'active' : null}`}
-            onClick={() => setYear('all')}
+            onClick={() => setSelectedYear('all')}
           >
             All
           </button>
@@ -23,7 +23,7 @@ const YearSelector = ({ years }) => {
           >
             <button
               className={`${selectedYear === year ? 'active' : null}`}
-              onClick={() => setYear(year)}
+              onClick={() => setSelectedYear(year)}
             >
               {year}
             </button>
