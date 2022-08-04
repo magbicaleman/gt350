@@ -13,14 +13,14 @@ const YearContent = props => (
       <div>Base prices</div>
       {grouppedByYear[props.year].prices.map(([trim, price]) => <PriceFormat key={trim} amount={price} label={trim} />)} 
       <h2>Colors</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px'}}>
+      <div style={{ display: 'grid', 'grid-template-columns': '1fr 1fr 1fr 1fr', gap: '5px'}}>
         {grouppedByYear[props.year].colors.map(item => <ColorCard key={item.name} {...item} />)}
       </div>
       <h2 style={{marginBottom: 0}}>Stripe Options</h2>
       <div className={colorCardStyles.price}>
         <span className={pillStyles.normal}>msrp</span> {grouppedByYear[props.year].stripeMsrp}
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: '5px', marginTop: '0.83em'}}>
+      <div style={{ display: 'grid', 'grid-template-columns': '1fr 1fr 1fr 1fr', gap: '5px', 'margin-top': '0.83em'}}>
         {grouppedByYear[props.year].stripes.map(item => <StripeCard key={item.name} {...item} />)}
       </div>
     </div>
